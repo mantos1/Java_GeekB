@@ -9,11 +9,11 @@ public class Lesson_1 {
             len = word1.length();
         }
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i <= len - 1; i++){
-            if(i <= word1.length()-1) {
+        for (int i = 0; i <= len - 1; i++) {
+            if (i <= word1.length() - 1) {
                 sb.append(word1.charAt(i));
             }
-            if(i <= word2.length()-1) {
+            if (i <= word2.length() - 1) {
                 sb.append(word2.charAt(i));
             }
         }
@@ -23,7 +23,7 @@ public class Lesson_1 {
 
     public int removeElement(int[] nums, int val) {
         int cnt = 0;
-        for(int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] != val) {
                 nums[cnt] = nums[i];
                 cnt += 1;
@@ -31,12 +31,14 @@ public class Lesson_1 {
         }
         return cnt;
     }
+
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        for (int i = 0;i < n; i++){
+        for (int i = 0; i < n; i++) {
             nums1[i + m] = nums2[i];
         }
         Arrays.sort(nums1);
     }
+
     public String reverseWords(String s) {
         StringBuilder sb = new StringBuilder();
         int end = s.length() - 1;
@@ -58,19 +60,20 @@ public class Lesson_1 {
         }
         return sb.toString();
     }
+
     public static boolean isPalindrome(String s) {
         int left = 0;
         int right = s.length() - 1;
         boolean answer = true;
         if (left >= right) answer = false;
         while (left < right) {
-            while (left < right && !Character.isLetterOrDigit(s.charAt(left))){
+            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {
                 ++left;
             }
-            while (left < right && !Character.isLetterOrDigit(s.charAt(right))){
+            while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {
                 --right;
             }
-            if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right)) || s.length() < 2 || s.charAt(left) == ' '){
+            if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right)) || s.length() < 2 || s.charAt(left) == ' ') {
                 answer = false;
                 break;
             }
@@ -79,6 +82,7 @@ public class Lesson_1 {
         }
         return answer;
     }
+
     public static void main(String[] args) {
     }
 };
